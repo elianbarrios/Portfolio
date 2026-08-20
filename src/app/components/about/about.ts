@@ -1,10 +1,11 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { NgxNumberTickerComponent } from '@omnedia/ngx-number-ticker';
 import { LanguageService } from '@services/languageService';
+import { Timeline } from "./timeline/timeline";
 
 @Component({
   selector: 'app-about',
-  imports: [NgxNumberTickerComponent],
+  imports: [NgxNumberTickerComponent, Timeline],
   templateUrl: './about.html',
 })
 export class About {

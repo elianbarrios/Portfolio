@@ -1,0 +1,127 @@
+<ul class="timeline timeline-vertical">
+  <li>
+    <div class="timeline-start w-full flex flex-col items-end me-3">
+      <span>{{ languageService.currentLanguage() === 'en' ? 'December' : 'Diciembre' }} 2023</span>
+      <span>{{ languageService.currentLanguage() === 'en' ? 'Present' : 'Actualidad' }}</span>
+    </div>
+    <div class="timeline-middle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
+        <path fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <button
+      class="timeline-end timeline-box text-left text-base transition-all hover:py-5 hover:cursor-pointer hover:border-info"
+      onclick="experience_2.showModal()">
+      {{ languageService.currentLanguage() === 'en' ? 'Software Developer at El Zeppelin' : 'Desarrollador de Software
+      en El Zeppelin' }}
+    </button>
+    <hr class="h-15 bg-info" />
+  </li>
+  <li>
+    <hr class="h-15 bg-info" />
+    <div class="timeline-start w-full flex flex-col items-end me-3">
+      <span>{{ languageService.currentLanguage() === 'en' ? 'June' : 'Junio' }} 2023</span>
+      <span>{{ languageService.currentLanguage() === 'en' ? 'December' : 'Diciembre' }} 2023</span>
+    </div>
+    <div class="timeline-middle">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="text-info h-5 w-5">
+        <path fill-rule="evenodd"
+          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+          clip-rule="evenodd" />
+      </svg>
+    </div>
+    <button
+      class="timeline-end timeline-box text-left text-base transition-all hover:py-5 hover:cursor-pointer hover:border-info"
+      onclick="experience_1.showModal()">
+      {{ languageService.currentLanguage() === 'en' ? 'Data entry operator at El Zeppelin' : 'Operador de ingreso de
+      datos en El Zeppelin' }}
+    </button>
+  </li>
+</ul>
+
+<dialog id="experience_2" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div class="mb-3">
+      <h3 class="text-lg font-bold">{{ languageService.currentLanguage() === 'en' ? 'Software Developer at El Zeppelin'
+        : 'Desarrollador de Software en El Zeppelin' }}</h3>
+
+      <span>{{ languageService.currentLanguage() === 'en' ? 'December' : 'Diciembre' }} 2023 - {{
+        languageService.currentLanguage() === 'en' ? 'Present' : 'Actualidad' }}</span>
+    </div>
+
+    @if (languageService.currentLanguage() === 'en') {
+    <p class="mb-2">
+      - I participate in the creation of new programs adapted to the company's constantly evolving processes, analyzing
+      processes, gathering requirements, writing code, and proposing improvements.
+    </p>
+    <p class="mb-2">
+      - I maintain legacy software, optimizing code, applying best practices, and adding new features that improve its
+      maintainability.
+    </p>
+    <p class="mb-2">
+      - I developed a system capable of working offline and synchronizing operations upon reconnection, with the ability
+      to automatically resolve conflicts between records modified simultaneously. This increased system availability.
+    </p>
+    }
+    @else {
+    <p class="mb-2">
+      - Participo en la creación de nuevos programas adaptados a la evolución constante de los procesos de la empresa,
+      analizando procesos, tomando requerimientos, escribiendo código y proponiendo mejoras.
+    </p>
+    <p class="mb-2">
+      - Le doy mantenimiento a software legacy, optimizando código, aplicando buenas practicas y agregando nuevas
+      funcionalidades las cuales mejoran su mantenibilidad.
+    </p>
+    <p class="mb-2">
+      - Desarrollé un sistema capaz de trabajar de manera offline y sincronizar operaciones al estar nuevamente online
+      con la capacidad de resolver conflictos automaticamente entre los registros modificados al mismo tiempo, esto
+      aumentó la disponibilidad del sistema.
+    </p>
+    }
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">{{ languageService.currentLanguage() === 'en' ? 'Close' : 'Cerrar' }}</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="experience_1" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div class="mb-3">
+      <h3 class="text-lg font-bold">{{ languageService.currentLanguage() === 'en' ? 'Data entry operator at El Zeppelin'
+        : 'Operador de ingreso de datos en El Zeppelin' }}</h3>
+
+      <span>{{ languageService.currentLanguage() === 'en' ? 'June' : 'Junio' }} 2023 - {{
+        languageService.currentLanguage() === 'en' ? 'December' : 'Diciembre' }} 2023</span>
+    </div>
+
+    @if (languageService.currentLanguage() === 'en') {
+    <p class="mb-2">
+      - I was responsible for capturing information on industrial and financial processes in the company's computer
+      system.
+    </p>
+    <p class="mb-2">
+      - I analyzed the information and proposed improvements to its capture.
+    </p>
+    }
+    @else {
+    <p class="mb-2">
+      - Me encargué de captar la información de los procesos industriales y de finanzas en el sistema informático de la
+      empresa.
+    </p>
+    <p class="mb-2">
+      - Analicé información y propuse mejoras para su captación.
+    </p>
+    }
+
+    <div class="modal-action">
+      <form method="dialog">
+        <button class="btn">{{ languageService.currentLanguage() === 'en' ? 'Close' : 'Cerrar' }}</button>
+      </form>
+    </div>
+  </div>
+</dialog>
