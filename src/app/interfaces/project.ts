@@ -1,12 +1,11 @@
+import { Badge } from "./badge";
+
 export interface Project {
-  id: string;
+  id: number;
   title: string;
-  badges: string[];
-  description: {
-    en: string;
-    es: string;
-  };
-  githubUrl?: string;
-  projectUrl?: string;
-  imageUrl: string;
+  description: string;
+  img_url: string;
+  github_url?: string;
+  project_url?: string;
+  badge: Badge[];
 }

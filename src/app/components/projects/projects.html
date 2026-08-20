@@ -1,6 +1,6 @@
 <div class="lg:px-16">
   <div class="flex flex-col items-center">
-    <h2 class="ms-3 text-3xl font-bold">{{ languageService.currentLanguage() === 'en' ? 'Projects' : 'Proyectos' }}</h2>
+    <h2 class="ms-3 text-3xl font-bold">Projects</h2>
 
     <div class="block mt-3">
       <div class="divider divider-info divider-horizontal h-10 w-10"></div>
@@ -10,7 +10,7 @@
   </div>
 
   <div class="flex flex-col gap-14 mt-7 items-center">
-    @for (project of projectService.getAll(); track project.id; let index = $index) {
+    @for (project of projects(); track project.id; let index = $index) {
     <om-fade [direction]="index % 2 == 0 ? 'left' : 'right'" [transitionDuration]="'1s'" [animateOnlyOnce]="true">
       <div class="flex flex-col items-center gap-10 lg:justify-between lg:flex-row"
         [class.lg:flex-row-reverse]="index % 2 != 0" [class.lg:self-end]="index % 2 != 0">
@@ -18,25 +18,24 @@
           <h3 class="text-2xl font-bold">{{ project.title }}</h3>
 
           <div class="flex flex-wrap gap-2 lg:w-11/12">
-            @for (badge of project.badges; track badge) {
-            <div class="badge badge-neutral font-bold">{{ badge }}</div>
+            @for (badge of project.badge; track badge) {
+            <div class="badge badge-neutral font-bold">{{ badge.name }}</div>
             }
           </div>
 
-          <p class="lg:pe-10">{{ project.description[languageService.currentLanguage()] }}</p>
+          <p class="lg:pe-10">{{ project.description }}</p>
 
           <div class="flex items-center gap-5 mt-2">
-            @if (project.githubUrl) {
-            <a href="{{ project.githubUrl }}" class="btn btn-soft btn-info">
-              {{ languageService.currentLanguage() === 'en' ? 'View GitHub' : 'Ver GitHub' }}
+            @if (project.github_url) {
+            <a href="{{ project.github_url }}" class="btn btn-soft btn-info">
+              View GitHub
             </a>
             }
 
-            @if (project.projectUrl) {
-            <a href="{{ project.projectUrl }}"
+            @if (project.project_url) {
+            <a href="{{ project.project_url }}"
               class="border-b-2 hover:text-info transition-all flex items-center gap-2">
-              {{ languageService.currentLanguage() === 'en' ? 'View Project' : 'Ver Proyecto' }}
-
+              View Project
               <ng-icon name="ionArrowUpRightBoxOutline"></ng-icon>
             </a>
             }
@@ -47,8 +46,8 @@
           <div class="hover-3d">
             <picture class="rounded-2xl shadow-xl shadow-base-300">
               <img
-                src="{{ project.imageUrl }}"
-                alt="{{ languageService.currentLanguage() === 'en' ? 'preview of ' + project.title + ' project' : 'vista previa del proyecto ' + project.title }}"
+                src="{{ project.img_url }}"
+                alt="{{ 'preview of ' + project.title + ' project' }}"
                 width="400"
                 height="300"
               >
@@ -69,8 +68,7 @@
 
       <a href="https://github.com/elianbarrios?tab=repositories" class="btn btn-soft btn-info w-60 my-5" >
         <ng-icon name="ionLogoOctocat" class="text-xl"></ng-icon>
-
-        {{ languageService.currentLanguage() === 'en' ? 'View more projects' : 'Ver más proyectos' }}
+        View more projects
       </a>
   </div>
 </div>

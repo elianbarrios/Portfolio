@@ -40,6 +40,7 @@
     "@omnedia/ngx-orb": "^4.0.1",
     "@omnedia/ngx-particles": "^4.0.1",
     "@omnedia/ngx-typewriter": "^4.0.1",
+    "@supabase/supabase-js": "^2.112.3",
     "ogl": "^1.0.11",
     "rxjs": "~7.8.0",
     "three": "^0.182.0",
