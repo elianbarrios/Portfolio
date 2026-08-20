@@ -1,6 +1,6 @@
 <div class="lg:px-16">
   <div class="flex flex-col items-center">
-    <h2 class="ms-3 text-3xl font-bold">Projects</h2>
+    <h2 class="ms-3 text-3xl font-bold">{{ languageService.currentLanguage() === 'en' ? 'Projects' : 'Proyectos' }}</h2>
 
     <div class="block mt-3">
       <div class="divider divider-info divider-horizontal h-10 w-10"></div>
@@ -15,7 +15,9 @@
       <div class="flex flex-col items-center gap-10 lg:justify-between lg:flex-row"
         [class.lg:flex-row-reverse]="index % 2 != 0" [class.lg:self-end]="index % 2 != 0">
         <div class="flex flex-col gap-2 lg:w-2/4 xl:w-3/5">
-          <h3 class="text-2xl font-bold">{{ project.title }}</h3>
+          <h3 class="text-2xl font-bold">
+            {{ languageService.currentLanguage() === 'en' ? project.title : (project.title_es || project.title) }}
+          </h3>
 
           <div class="flex flex-wrap gap-2 lg:w-11/12">
             @for (badge of project.badge; track badge) {
@@ -23,19 +25,21 @@
             }
           </div>
 
-          <p class="lg:pe-10">{{ project.description }}</p>
+          <p class="lg:pe-10">
+            {{ languageService.currentLanguage() === 'en' ? project.description : (project.description_es || project.description) }}
+          </p>
 
           <div class="flex items-center gap-5 mt-2">
             @if (project.github_url) {
             <a href="{{ project.github_url }}" class="btn btn-soft btn-info">
-              View GitHub
+              {{ languageService.currentLanguage() === 'en' ? 'View GitHub' : 'Ver GitHub' }}
             </a>
             }
 
             @if (project.project_url) {
             <a href="{{ project.project_url }}"
               class="border-b-2 hover:text-info transition-all flex items-center gap-2">
-              View Project
+              {{ languageService.currentLanguage() === 'en' ? 'View Project' : 'Ver Proyecto' }}
               <ng-icon name="ionArrowUpRightBoxOutline"></ng-icon>
             </a>
             }
@@ -47,7 +51,9 @@
             <picture class="rounded-2xl shadow-xl shadow-base-300">
               <img
                 src="{{ project.img_url }}"
-                alt="{{ 'preview of ' + project.title + ' project' }}"
+                [alt]="languageService.currentLanguage() === 'en'
+                  ? 'preview of ' + project.title + ' project'
+                  : 'vista previa del proyecto ' + (project.title_es || project.title)"
                 width="400"
                 height="300"
               >
@@ -68,7 +74,7 @@
 
       <a href="https://github.com/elianbarrios?tab=repositories" class="btn btn-soft btn-info w-60 my-5" >
         <ng-icon name="ionLogoOctocat" class="text-xl"></ng-icon>
-        View more projects
+        {{ languageService.currentLanguage() === 'en' ? 'View more projects' : 'Ver más proyectos' }}
       </a>
   </div>
 </div>

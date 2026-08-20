@@ -15,12 +15,20 @@ export class LanguageService {
     if (storedLanguage) {
       this.language.set(storedLanguage);
     }
+    this.updateHtmlLang(this.language());
   }
 
   public toggleLanguage(): void {
     const nextLanguage: Language = this.language() === 'en' ? 'es' : 'en';
     this.language.set(nextLanguage);
     this.saveLanguage(nextLanguage);
+    this.updateHtmlLang(nextLanguage);
+  }
+
+  private updateHtmlLang(language: Language): void {
+    if (typeof globalThis.document !== 'undefined') {
+      globalThis.document.documentElement.lang = language;
+    }
   }
 
   private getStoredLanguage(): Language | null {

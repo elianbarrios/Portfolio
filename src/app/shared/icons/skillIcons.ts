@@ -11,8 +11,6 @@ export {
   diLinuxPlain,
   diGitPlain,
   diPostmanPlain,
-  diDbeaverPlain,
-  diVisualstudioPlain,
   diVscodePlain,
   diFigmaPlain
 } from '@ng-icons/devicon/plain';

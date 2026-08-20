@@ -1,5 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProjectService } from '@services/projectService';
+import { LanguageService } from '@services/languageService';
 import { NgxFadeComponent } from '@omnedia/ngx-fade';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { ionLogoOctocat, ionArrowUpRightBoxOutline } from '@ng-icons/ionicons';
@@ -11,8 +12,9 @@ import { Project } from '@interfaces/project';
   templateUrl: './projects.html',
   providers: [provideIcons({ionLogoOctocat}), provideIcons({ionArrowUpRightBoxOutline})]
 })
-export class Projects {
+export class Projects implements OnInit {
   private projectService = inject(ProjectService);
+  protected languageService = inject(LanguageService);
   protected projects = signal<Project[]>([]);
 
   public async ngOnInit() {
