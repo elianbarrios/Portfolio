@@ -1,6 +1,6 @@
 import { Component, computed, inject, signal } from '@angular/core';
 import { NgxNumberTickerComponent } from '@omnedia/ngx-number-ticker';
-import { LanguageService } from '../../services/languageService';
+import { LanguageService } from '@services/languageService';
 
 @Component({
   selector: 'app-about',

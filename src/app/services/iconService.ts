@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { MySkills } from '../shared/data/custom-icons';
-import { Icon } from '../interfaces/icon';
+import { MySkills } from '@shared/data/custom-icons';
+import { Icon } from '@interfaces/icon';
 
 @Injectable({
   providedIn: 'root'

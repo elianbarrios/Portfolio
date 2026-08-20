@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Greeting } from "./greeting/greeting";
 import { NgxMarqueeComponent, OmMarqueeItemDirective } from "@omnedia/ngx-marquee";
-import { IconService } from '../../services/iconService';
 import { NgxOrbComponent } from '@omnedia/ngx-orb';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import * as skillsIcons from '../../shared/icons/skillIcons'
+import * as skillsIcons from '@shared/icons/skillIcons'
+import { IconService } from '@services/iconService';
 
 @Component({
   selector: 'app-home',

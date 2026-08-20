@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { Portfolio } from './pages/portfolio/portfolio';
+import { Portfolio } from '@pages/portfolio/portfolio';
 
 export const routes: Routes = [
   {
@@ -8,6 +8,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    loadComponent: () => import('./pages/not-found/not-found')
+    loadComponent: () => import('@pages/not-found/not-found')
   }
 ];

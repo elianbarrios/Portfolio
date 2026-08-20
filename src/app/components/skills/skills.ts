@@ -1,8 +1,8 @@
 import { Component, inject, signal, computed } from '@angular/core';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { IconService } from '../../services/iconService';
-import { Language, LanguageService } from '../../services/languageService';
-import * as skillsIcons from '../../shared/icons/skillIcons'
+import { IconService } from '@services/iconService';
+import { Language, LanguageService } from '@services/languageService';
+import * as skillsIcons from '@shared/icons/skillIcons'
 
 type tabItem = 'languages' | 'frameworks-libraries' | 'databases' | 'tools' | 'ia';
 

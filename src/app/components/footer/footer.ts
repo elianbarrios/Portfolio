@@ -1,9 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterLink } from "@angular/router";
-import { IconService } from '../../services/iconService';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import * as socialIcons from '../../shared/icons/socialIcons'
-import { LanguageService } from '../../services/languageService';
+import { IconService } from '@services/iconService';
+import { LanguageService } from '@services/languageService';
+import * as socialIcons from '@shared/icons/socialIcons'
 
 @Component({
   selector: 'app-footer',

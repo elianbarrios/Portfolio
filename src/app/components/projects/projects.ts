@@ -1,9 +1,9 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { ProjectService } from '../../services/projectService';
+import { ProjectService } from '@services/projectService';
 import { NgxFadeComponent } from '@omnedia/ngx-fade';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { ionLogoOctocat, ionArrowUpRightBoxOutline } from '@ng-icons/ionicons';
-import { Project } from '../../interfaces/project';
+import { Project } from '@interfaces/project';
 
 @Component({
   selector: 'app-projects',

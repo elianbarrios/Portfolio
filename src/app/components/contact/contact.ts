@@ -1,8 +1,8 @@
 import { Component, ElementRef, inject, viewChild } from '@angular/core';
-import { IconService } from '../../services/iconService';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import * as socialIcons from '../../shared/icons/socialIcons'
-import { LanguageService } from '../../services/languageService';
+import { IconService } from '@services/iconService';
+import { LanguageService } from '@services/languageService';
+import * as socialIcons from '@shared/icons/socialIcons'
 
 @Component({
   selector: 'app-contact',
