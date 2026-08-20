@@ -1,9 +1,0 @@
-[build]
-# base = "portfolio"
-command = "ng build"
-publish = "dist/Portfolio/browser"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
