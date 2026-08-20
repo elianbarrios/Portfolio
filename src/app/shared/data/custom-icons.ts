@@ -33,8 +33,14 @@ export const MySkills: Icon[] = [
   },
   {
     id: 'vb',
-    name: 'VisualBasic .NET',
+    name: 'VisualBasic',
     iconName: 'diVisualbasicPlain',
+    type: 'language'
+  },
+  {
+    id: 'micropython',
+    name: 'MicroPython',
+    iconName: 'simpleMicropython',
     type: 'language'
   },
   {
@@ -65,6 +71,12 @@ export const MySkills: Icon[] = [
     id: 'dotnet',
     name: '.NET',
     iconName: 'simpleDotnet',
+    type: 'framework-library'
+  },
+  {
+    id: 'avalonia',
+    name: 'Avalonia UI',
+    iconName: 'simpleAvaloniaui',
     type: 'framework-library'
   },
   {
@@ -106,25 +118,13 @@ export const MySkills: Icon[] = [
   {
     id: 'docker',
     name: 'Docker',
-    iconName: 'diDockerPlain',
+    iconName: 'simpleDocker ',
     type: 'tool'
   },
   {
     id: 'postman',
     name: 'Postman',
     iconName: 'diPostmanPlain',
-    type: 'tool'
-  },
-  {
-    id: 'dbeaver',
-    name: 'Dbeaver',
-    iconName: 'diDbeaverPlain',
-    type: 'tool'
-  },
-  {
-    id: 'vs',
-    name: 'Visual Studio',
-    iconName: 'diVisualstudioPlain',
     type: 'tool'
   },
   {
@@ -137,6 +137,18 @@ export const MySkills: Icon[] = [
     id: 'figma',
     name: 'Figma',
     iconName: 'diFigmaPlain',
+    type: 'tool'
+  },
+  {
+    id: 'supabase',
+    name: 'Supabase',
+    iconName: 'simpleSupabase',
+    type: 'tool'
+  },
+  {
+    id: 'vercel',
+    name: 'Vercel',
+    iconName: 'simpleVercel',
     type: 'tool'
   },
   {
