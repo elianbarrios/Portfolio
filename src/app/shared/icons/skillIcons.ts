@@ -27,8 +27,8 @@ export {
   simpleDocker,
   simpleSupabase,
   simpleVercel,
-  simpleGithubcopilot,
   simpleClaude,
   simplePerplexity,
-  simpleGooglegemini
+  simpleGooglegemini,
+  simpleOpencode
 } from '@ng-icons/simple-icons';

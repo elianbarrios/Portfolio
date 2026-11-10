@@ -152,12 +152,6 @@ export const MySkills: Icon[] = [
     type: 'tool'
   },
   {
-    id: 'copilot',
-    name: 'GitHub Copilot',
-    iconName: 'simpleGithubcopilot',
-    type: 'ia'
-  },
-  {
     id: 'claude',
     name: 'Claude',
     iconName: 'simpleClaude',
@@ -173,6 +167,12 @@ export const MySkills: Icon[] = [
     id: 'gemini',
     name: 'Gemini',
     iconName: 'simpleGooglegemini',
+    type: 'ia'
+  },
+  {
+    id: 'opencode',
+    name: 'OpenCode',
+    iconName: 'simpleOpencode',
     type: 'ia'
   },
   {
