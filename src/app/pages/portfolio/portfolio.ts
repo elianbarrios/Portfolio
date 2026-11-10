@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { afterNextRender, Component, HostListener, inject, signal } from '@angular/core';
+import { LanguageService } from '@services/languageService';
 import { Navbar } from "@components/navbar/navbar";
 import { Home } from "@components/home/home";
 import { About } from "@components/about/about";
@@ -14,4 +15,20 @@ import { NgxParticlesComponent } from '@omnedia/ngx-particles';
   imports: [Navbar, Home, About, Skills, Footer, Projects, Contact, NgxFlickeringGridComponent, NgxParticlesComponent],
   templateUrl: './portfolio.html',
 })
-export class Portfolio { }
+export class Portfolio {
+  protected languageService = inject(LanguageService);
+  protected showScrollTop = signal(false);
+
+  constructor() {
+    afterNextRender(() => this.onWindowScroll());
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.showScrollTop.set(window.scrollY > window.innerHeight);
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}

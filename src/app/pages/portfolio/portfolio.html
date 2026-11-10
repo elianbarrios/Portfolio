@@ -31,4 +31,21 @@
   <div class="mt-20">
     <app-footer />
   </div>
+
+  <button
+    type="button"
+    class="btn btn-circle btn-info fixed right-5 bottom-5 z-50 shadow-lg transition-all duration-300 ease-out"
+    [class.opacity-0]="!showScrollTop()"
+    [class.translate-y-3]="!showScrollTop()"
+    [class.pointer-events-none]="!showScrollTop()"
+    [attr.tabindex]="showScrollTop() ? 0 : -1"
+    [attr.aria-hidden]="!showScrollTop()"
+    aria-label="Scroll to top"
+    [title]="languageService.currentLanguage() === 'en' ? 'Back to top' : 'Volver arriba'"
+    (click)="scrollToTop()"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
 </div>
